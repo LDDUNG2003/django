@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <LINK REL="SHORTCUT ICON" HREF="/static/test.png">
+    <title>{% block title %}{% endblock title %}</title>
+    {% include "includes/base_css.html" %}
+    {% block css %}{% endblock css %}
+
+</head>
+    <style>
+    .map-inside{
+        top:138px !important;
+    }
+    </style>
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    {% comment %} {% include "includes/base_sidebar.html" %} {% endcomment %}
+
+    <!-- Main -->
+    {% block main_content %}{% endblock main_content %}
+    <!-- Main End -->
+
+    <!-- Footer Section Begin -->
+    {% include "includes/base_footer.html" %}
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    {% include "includes/base_js.html" %}
+    {% block scripts %}{% endblock scripts %}
+</body>
+
+</html>
