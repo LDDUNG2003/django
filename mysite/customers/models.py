@@ -1,3 +1,4 @@
+import email
 from django.db import models
 
 
@@ -11,3 +12,8 @@ class Customer(models.Model):
 
     def __str__(self):
         return self.email
+# class CustomerTikes(models.Model):
+#     email = models.CharField(max_length=250, blank=False)
+#     The_remaining_amount = models.CharField(max_length=200, blank=True)
+#     def __call__(self, *args: Any, **kwds: Any) -> Any:
+#         return super().__call__(*args, **kwds)
