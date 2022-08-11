@@ -3,7 +3,7 @@ from .forms import FormDangKy, FormDangNhap, FormThongTin, FormDoiMatKhau
 from .models import Customer
 from myshop.my_module import check_session
 from django.contrib.auth.hashers import PBKDF2PasswordHasher
-
+from django.template import RequestContext
 
 def login(request):
     session_status = check_session(request, 'sessionKhachHang')
@@ -78,8 +78,8 @@ def login(request):
         'form_dn': form_dn,
         'result_login': result_login,
 
-    }
 
+    }
     return render(request, 'customers/login.html', context)
 
 

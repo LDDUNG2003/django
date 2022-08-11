@@ -46,7 +46,7 @@
                 <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
                 <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
             </ul>
-            <div class="header__cart__price">item: <span>$150.00</span></div>
+            <div class="header__cart__price">item: <span>$0</span></div>
         </div> 
         <div class="humberger__menu__widget">
             <div class="header__top__right__language">
@@ -64,18 +64,18 @@
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="./shop-grid.html">Shop</a></li>
+                <li ><a href="#">Home</a></li>
+                <li><a href="/shop">Shop</a></li>
                 <li><a href="#">Pages</a>
                     <ul class="header__menu__dropdown">
-                        <li><a href="./shop-details.html">Shop Details</a></li>
-                        <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                        <li><a href="./checkout.html">Check Out</a></li>
-                        <li><a href="./blog-details.html">Blog Details</a></li>
+                        <li><a href="#">Shop Details</a></li>
+                        <li><a href="#">Shoping Cart</a></li>
+                        <li><a href="#">Check Out</a></li>
+                        <li><a href="{% url "blog:index" %}">Blog Details</a></li>
                     </ul>
                 </li>
-                <li><a href="./blog.html">Blog</a></li>
-                <li><a href="{% url 'contact:contact' %}">Contact</a></li>
+                <li><a href="{% url "blog:index" %}">Blog</a></li>
+                <li class="active"><a href="{% url 'contact:contact' %}">Contact</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -139,6 +139,7 @@
             
                                     {% if session_status %}
                                         <li >
+                                            {% csrf_token %}
                                             <a class="" href="{% url 'customers:logout' %}">
                                                 <i></i>Đăng xuất</a>
                                         </li>
@@ -183,10 +184,10 @@
                 <div class="col-lg-3">
                     <div class="header__cart">
                         <ul>
-                            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                            <li><a href="#"><i class="fa fa-heart"></i> <span>0</span></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>0</span></a></li>
                         </ul>
-                        <div class="header__cart__price">item: <span>$150.00</span></div>
+                        <div class="header__cart__price">item: <span>$0</span></div>
                     </div>
                 </div>
             </div>
